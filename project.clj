@@ -5,9 +5,7 @@
                  [re-frame "0.4.1"]
                  [reagent "0.5.1"]
                  [secretary "1.2.3"]
-                 [cljsjs/react-dnd "2.0.2-0"]
                  [cljsjs/highlight "8.4-0"]
-                 [cljsjs/react-dnd-html5-backend "2.0.0-0"]
                  [medley "0.7.0"]
                  [markdown-clj "0.9.82"]]
 

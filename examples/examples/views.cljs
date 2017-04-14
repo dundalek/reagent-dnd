@@ -76,11 +76,11 @@
 (defn about-text [drag-state drop-state]
   (fn []
     (document
-    "
+     "
 # Reagent-dnd: Simple Drag & Drop for Reagent
-Reagent-dnd is a set of [Reagent](https://reagent-project.github.io/) 
+Reagent-dnd is a set of [Reagent](https://reagent-project.github.io/)
 components that help you create drag-and-drop
-interfaces that don't directly manipulate the DOM. It's a very thin wrapper 
+interfaces that don't directly manipulate the DOM. It's a very thin wrapper
 around the excellent [ReactDnD](https://gaearon.github.io/react-dnd/) library.
 
 I built it because I had trouble finding a good way to use drag-and-drop from
@@ -93,7 +93,7 @@ HTML5 drag & drop API was painful and bug-prone. ReactDnD was a breath of fresh
 air--a simple drag & drop library that focused on how the operation changed
 your *data* without changing the DOM state directly. I wanted a simple way to
 use it with Reagent.
-  
+
 ## What does it look like?
 "
      (dc/mkdn-pprint-source knight)
@@ -185,5 +185,5 @@ use it with Reagent.
                   [:div (panels @active-panel)]]
                  [:div.col-1_sm-12]]])]
     [(dnd/with-drag-drop-context
-       dnd/html5-backend
+       @dnd/html5-backend
        page)]))

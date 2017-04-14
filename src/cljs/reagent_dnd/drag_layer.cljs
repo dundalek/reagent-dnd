@@ -8,7 +8,7 @@
 
 (defn component
   [& {:keys [child state]}]
-  (let [wrapper (react-dnd/drag-layer monitor/drag-layer-props)]
+  (let [wrapper (@react-dnd/drag-layer monitor/drag-layer-props)]
     [(r/adapt-react-class
       (wrapper
        (r/reactify-component

@@ -60,7 +60,7 @@
   [& {:as args
       :keys [child types drop state can-drop?]}]
   {:pre [(validate-args-macro args-desc args "drop-target")]}
-  (let [wrapper (react-dnd/drop-target
+  (let [wrapper (@react-dnd/drop-target
                  (make-types types)
                  (options args)
                  monitor/props)]

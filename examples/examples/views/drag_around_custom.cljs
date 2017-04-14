@@ -45,7 +45,7 @@
       [:div {:style {:position :relative}}
        [dnd/drag-source
         :child [draggable drag-state]
-        :drag-preview dnd/get-empty-image
+        :drag-preview @dnd/get-empty-image
         :type :box
         :begin-drag (constantly @pos)
         :state drag-state]])))

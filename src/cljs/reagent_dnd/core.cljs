@@ -19,6 +19,5 @@
 
 (defn with-drag-drop-context [backend component]
   (r/adapt-react-class
-   ((drag-drop-context backend)
+   ((@drag-drop-context backend)
     (r/reactify-component component))))
-

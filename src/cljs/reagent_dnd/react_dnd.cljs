@@ -1,26 +1,32 @@
 (ns reagent-dnd.react-dnd
-  (:require [reagent.core :as r]
-            [cljsjs.react-dnd]
-            [cljsjs.react-dnd-html5-backend]))
+  (:require [reagent.core :as r]))
 
 (def drag-drop-context
-  (.-DragDropContext js/ReactDnD))
+  (delay
+    (.-DragDropContext js/ReactDnD)))
 
 (def drag-layer
-  (.-DragLayer js/ReactDnD))
+  (delay
+    (.-DragLayer js/ReactDnD)))
 
 (def drag-source
-  (.-DragSource js/ReactDnD))
+  (delay
+    (.-DragSource js/ReactDnD)))
 
 (def drop-target
-  (.-DropTarget js/ReactDnD))
+  (delay
+    (.-DropTarget js/ReactDnD)))
 
-(def html5-backend js/ReactDnDHTML5Backend)
+(def html5-backend
+  (delay
+    (.-HTML5 js/ReactDnD)))
 
-(def get-empty-image (.getEmptyImage html5-backend))
+(def get-empty-image
+  (delay
+    (.getEmptyImage @html5-backend)))
 
 (defn with-drag-drop-context [backend]
   (fn [component]
     (r/adapt-react-class
-     ((drag-drop-context backend)
+     ((@drag-drop-context backend)
       (r/reactify-component component)))))

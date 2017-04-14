@@ -84,7 +84,7 @@ itself"}])
                                             :dragging?
                                             :end-drag
                                             :can-drag?]))
-        wrapper (react-dnd/drag-source
+        wrapper (@react-dnd/drag-source
                  (clj->js type)
                  options
                  monitor/props)]
